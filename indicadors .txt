@@ -1,0 +1,11 @@
+Indicador	                    Descrição
+Total de Vendas	                Soma geral de totalVendas no período.
+Ticket Médio	                Média de totalVendas por venda.
+Quantidade Vendida	            Soma de QtdeVendida por período.
+Preço Médio por Produto	        Média de PrecoUnitario por tipo de equipamento.
+Top 5 Produtos Vendidos	        Equipamentos com maior volume de vendas.
+Top 5 Fabricantes	            Fabricantes com maior faturamento.
+Top 5 Vendedores	            Vendedores com maior desempenho em vendas.
+Vendas por Departamento	        Distribuição de vendas por Cargo Gerente.
+Variação Mensal de Vendas	    Evolução mês a mês do faturamento.
+Vendas por Região (se houver)	Se tiver dados geográficos, mostrar por estado ou cidade.
