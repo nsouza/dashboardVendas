@@ -3,6 +3,7 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 from dataset import df
+from utils import format_number
 
 st.set_page_config(layout="wide")
 
@@ -27,10 +28,10 @@ st.markdown(
 
 aba1, aba2, aba3 = st.tabs(['Dataset', 'Receitas', 'Vendedores'])
 with aba1:
-    st.dataframe(df)
+     st.dataframe(df.head(10))
 with aba2:
     coluna1, coluna2 = st.columns(2)
     with coluna1:
-       st.metric('Receitas Total', df['Total de vendas'].sum())
+       st.metric('Receitas Total', format_number(df['Total de vendas'].sum(),'R$'))
     with coluna2:
-        st.metric('Quantidade de vendas', df.shape[0])
+        st.metric('Quantidade de vendas', format_number(df.shape[0]))
