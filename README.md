@@ -1,0 +1,1 @@
+#Executar ambiente virtual: .\.venv\Scripts\Activate.ps1
