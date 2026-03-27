@@ -35,3 +35,33 @@ with aba2:
        st.metric('Receitas Total', format_number(df['Total de vendas'].sum(),'R$'))
     with coluna2:
         st.metric('Quantidade de vendas', format_number(df.shape[0]))
+
+    st.subheader("Análise Dinâmica")
+
+    # Selectbox para escolher a dimensão
+    dimensao = st.selectbox(
+        "Selecione a dimensão para agrupar:",
+        ["Estado", "Cidade", "Nome do Vendedor", "Nome do Fornecedor"]
+    )
+
+    # Selectbox para escolher a métrica
+    metrica = st.selectbox(
+        "Selecione a métrica:",
+        ["Total de vendas", "Quantidade vencida"]
+    )
+
+    # Agrupar dinamicamente
+    df_group = df.groupby(dimensao)[metrica].sum().reset_index()
+
+    # Criar gráfico
+    fig = px.bar(
+        df_group,
+        x=dimensao,
+        y=metrica,
+        text=metrica,
+        title=f"{metrica} por {dimensao}",
+        color=metrica,
+        color_continuous_scale="Blues"
+    )
+    fig.update_traces(texttemplate='%{text:.2s}', textposition='outside')
+    st.plotly_chart(fig, use_container_width=True)
