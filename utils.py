@@ -1,4 +1,5 @@
 from regex import sub
+from dataset import df
 
 from dataset import df
 def format_number(value, prefix=''):
@@ -31,3 +32,4 @@ df_rec_estado = (
       .sort_values('Total de vendas', ascending=False)
 )
 #print(df_rec_estado)
+print(df_rec_estado.columns)
